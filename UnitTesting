@@ -1,11 +1,120 @@
-package org.example.Practice;
+package org.example.main;
 
-public class UnitTest {
+
+public class UnitTesting {
     public static void main(String[] args) {
-        char[] charArray = {'a', 'b', 'c', 'd', 'e' };
-        for(int i=0;i<charArray.length-1;++i){
-            charArray[i] = (char) (charArray[i] -32);
-        }
-        System.out.println(charArray);
+        String str ="1fg23";
+
+        String convertedStr = toUpperCase(str);
+
+        System.out.println(convertedStr);
+
+        System.out.println(tc1());
+        System.out.println(tc2());
+        System.out.println(tc3());
+        System.out.println(tc4());
+        System.out.println(tc5());
+        System.out.println(tc5());
+
+
     }
-}
+
+    public static String toUpperCase(String str) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            if (Character.isLetter(str.charAt(i)) && Character.isLowerCase(str.charAt(i))) {
+                result.append(Character.toUpperCase(str.charAt(i)));
+            } else {
+                result.append(str.charAt(i));
+            }
+        }
+        return result.toString();
+    }
+
+
+    public static boolean tc1(){
+      String input="zain";
+      String expected="ZAIN";
+      String result=toUpperCase(input);
+      if(result.equals(expected)){
+          return true;
+      }
+      return false;
+    }
+
+    public static boolean tc2(){
+        String input =null;
+        String  expected="Error";
+        String result="";
+
+        try{
+             result=toUpperCase(input);
+        }catch (NullPointerException d){
+            result="Error";
+        }
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean tc3(){
+        String input ="z";
+        String expected="Z";
+        String result=toUpperCase(input);
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+    }
+    public static boolean tc4(){
+        String input ="zain uddin";
+        String expected="ZAIN UDDIN";
+        String result=toUpperCase(input);
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+    }
+
+
+    public static boolean tc5(){
+        String expected = "#";
+        String input = "#";
+        String result = toUpperCase(input);
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean tc6(){
+        String expected = "7";
+        String input = "7";
+        String result = toUpperCase(input);
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
